@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(Remove-Item -Recurse -Force node_modules -ErrorAction SilentlyContinue)",
+      "Bash(Remove-Item -Force package-lock.json -ErrorAction SilentlyContinue)",
+      "PowerShell(npm install)",
+      "Bash(ipconfig)",
+      "PowerShell(Get-ChildItem -Path \"d:\\\\Tugas\\\\TA\\\\app\" -Recurse -File | Where-Object { $_.FullName -notmatch \"node_modules\" } | Select-Object FullName)",
+      "PowerShell(Get-ChildItem -Path \"d:\\\\Tugas\\\\TA\\\\app\" -Recurse | Where-Object { $_.FullName -notmatch \"node_modules\" -and !$_.PSIsContainer } | ForEach-Object { $_.FullName })",
+      "PowerShell(Select-String -Path \"d:\\\\Tugas\\\\TA\\\\app\\\\frontend\\\\public\\\\models\\\\TC.obj\" -Pattern \"^g \" | Select-Object -First 60 | ForEach-Object { $_.Line })",
+      "PowerShell(Select-String -Path \"d:\\\\Tugas\\\\TA\\\\app\\\\frontend\\\\public\\\\models\\\\Lantai 1.obj\" -Pattern \"^g \" | Select-Object -First 60 | ForEach-Object { $_.Line })",
+      "PowerShell(Select-String -Path \"d:\\\\Tugas\\\\TA\\\\app\\\\frontend\\\\public\\\\models\\\\TC.obj\" -Pattern \"^g \" | ForEach-Object { $_.Line } | Sort-Object | Get-Unique)",
+      "Bash(Get-ChildItem -Path \"d:\\\\Tugas\\\\TA\\\\app\\\\backend\" -Recurse -File)",
+      "Bash(Select-Object FullName)",
+      "Bash(Sort-Object FullName)",
+      "PowerShell(Get-ChildItem d:\\\\Tugas\\\\TA\\\\app\\\\backend | Where-Object { $_.Name -ne \"node_modules\" } | Select-Object Name, PSIsContainer)",
+      "PowerShell(Get-ChildItem d:\\\\Tugas\\\\TA\\\\app -Recurse -Depth 2 | Where-Object { $_.FullName -notmatch \"node_modules\" } | Select-Object FullName)",
+      "Bash(find /d/Tugas/TA/app -not -path \"*/node_modules/*\" -type f | grep -v node_modules | head -80)",
+      "Read(//d/Tugas/TA/app/**)"
+    ]
+  }
+}
